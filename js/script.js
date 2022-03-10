@@ -1,33 +1,61 @@
-function Producto (nombreValor, stockValor, precioValor){
+function Producto (nombreValor, stockValor, precioValor, categoriaValor, imagenValor){
     this.nombre = nombreValor;
     this.stock = stockValor;
     this.precio = precioValor;
+    this.categoria = categoriaValor;
+    this.img = imagenValor
     this.venta = function(cantidadComprada){
         this.stock -= cantidadComprada
         console.log("El stock remanente es de :" + this.stock + " " + this.nombre);
     }
 }
 
-
-const rolls = new Producto("Rolls", 42, 150)
-const niguiris = new Producto("Niguiris", 36, 100)
-const woks = new Producto("Woks", 4, 600) 
-const sashimis = new Producto("Sashimis", 32, 100)
-const ceviches = new Producto("Ceviches", 6, 500)
-const platos = new Producto("Platos", 4, 800)
-
-const listaProductos = [rolls, niguiris, woks, sashimis, ceviches, platos]
-
 let contador = 0
 let listadoProductosMenu = "Estos son nuestros productos: "
+
+const ProductoA = new Producto("Rolls", 42, 150, "Piezas")
+const ProductoB = new Producto("Niguiris", 36, 100, "Piezas")
+const ProductoC = new Producto("Woks", 4, 600, "Platos") 
+const ProductoD = new Producto("Sashimis", 32, 100, "Piezas")
+const ProductoE = new Producto("Ceviches", 6, 500, "Platos")
+const ProductoF = new Producto("Platos", 4, 800, "Platos")
+
+const listaProductos = [ProductoA, ProductoB, ProductoC, ProductoD, ProductoE, ProductoF]
+
+let piezas = document.querySelector('.categoria1')
+let platos = document.querySelector('.categoria2')
+
+piezas.addEventListener('click', function(){venderProductos("Piezas")})
+platos.addEventListener('click', function(){venderProductos("Plastico")})
+
+function venderProductos (categoria){
+}
+
+const listaSegunCategoria = listaProductos.filter(x => x.categoria == categoria)
+
+    let catalogo = document.querySelector('.catalogo')
+
+    catalogo.innerHTML = ''
+
+    for (const producto of listaSegunCategoria) {
+        let contenedorProductos = document.createElement("div");
+        
+        contenedorProductos.innerHTML = `<div class="card">
+                                <p> Producto: ${producto.nombre}</p>
+                                <b> $ ${producto.precio}</b>
+                                <img src=${producto.img} class="imagen"/>
+                                <button>Comprame!</button></div>`
+
+
+        catalogo.appendChild(contenedorProductos);
+    }
+
+/*
 
 for(const producto of listaProductos){
     contador ++
     listadoProductosMenu += "\n" + contador + "- " + producto.nombre + ": $" + producto.precio + " " + "u"
 }
-
-const filtroMasCaros = listaProductos.filter((el) => el.precio > 499)
-const filtroMasBaratos = listaProductos.filter ((el) => el.precio < 151)
 
 
 function listarProductos(){
@@ -148,5 +176,5 @@ function menu(){
         }
         alert("El precio de su compra es de: $" + precioTotalVenta);
     }
-
     menu()
+*/
