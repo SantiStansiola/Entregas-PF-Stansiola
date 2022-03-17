@@ -207,27 +207,3 @@ main{
 }
 
 // PAGINA : MENU
-
-main{
-    grid-area: main;
-    .tituloMenu{
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: 2em;
-            h2{
-            font-size: 2.5em;
-            font-weight: 300;
-        }
-    }
-    .contenedor-productos{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        button{
-            margin: 1em 20em 1em 20em;
-        }
-    }
-
-
-}
