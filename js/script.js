@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id:3,
-            imagen:"../imagenes/rolls.jgp.jpg",
+            imagen:"../imagenes/sashimis.jpg",
             nombre: "Sashimi de Salmon",
             precio: 120,
             categorias: "Piezas",
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id:4,
-            imagen:"../imagenes/rolls.jgp.jpg",
+            imagen:"../imagenes/sashimi-atun.jpg",
             nombre: "Sashimi de Atun",
             precio: 150,
             categorias: "Piezas",
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id:5,
-            imagen:"../imagenes/rolls.jgp.jpg",
+            imagen:"../imagenes/niguiris.jpg",
             nombre: "Niguiri de Salmon",
             precio: 100,
             categorias: "Piezas",
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id:6,
-            imagen:"../imagenes/rolls.jgp.jpg",
+            imagen:"../imagenes/niguiri-atun.jpg",
             nombre: "Niguiri de Atun",
             precio: 100,
             categorias: "Piezas",
@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id:7,
+            imagen:"../imagenes/woks.jpg",
             nombre: "Wok de Camarones",
             precio: 750,
             categorias: "Platos",
@@ -69,27 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id:8,
-            nombre: "Wok Vegetariano",
-            precio: 750,
-            categorias: "Platos",
-            stock: 3
-        },
-        {
-            id:9,
+            imagen:"../imagenes/ceviche.jpg",
             nombre: "Ceviche",
             precio: 600,
             categorias: "Entradas",
             stock: 5
         },
         {
-            id:10,
-            nombre: "Ceviche Especial",
-            precio: 700,
-            categorias: "Entradas",
-            stock: 5
-        },
-        {
-            id:11,
+            id:9,
+            imagen:"../imagenes/platos.jpg",
             nombre: "Salmon Teriyaki",
             precio: 900,
             categorias: "Platos",
@@ -116,9 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ProductoE = new Producto("Niguiri de Salmon", 30, 100, "Piezas", "../imagenes/niguiris.jpg")
     const ProductoF = new Producto("Niguiri de Atun", 30, 100, "Piezas", "../imagenes/niguiris.jpg")
     const ProductoG = new Producto("Wok de Camarones", 5, 750, "Platos", "../imagenes/woks.jpg")
-    const ProductoH = new Producto("Wok de Camarones", 3, 700, "Platos", "../imagenes/woks.jpg")
     const ProductoI = new Producto("Ceviche", 5, 600, "Entradas", "../imagenes/ceviche.jpg")
-    const ProductoJ = new Producto("Ceviche Especial", 5, 700, "Entradas", "../imagenes/ceviche.jpg")
     const ProductoK = new Producto("Salmon Teriyaki", 3, 900,"Platos", "../imagenes/platos.jpg")
 
 
@@ -132,24 +119,29 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodoCardBody.classList.add('card-body');
             // Titulo
             const miNodoTitle = document.createElement('h5');
-            miNodoTitle.classList.add('card-title', 'text-center');
+            miNodoTitle.classList.add('card-title','titulo-producto','text-center');
             miNodoTitle.textContent = info.nombre;
+            // Imagen
+            const miNodoImagen = document.createElement('img');
+            miNodoImagen.classList.add('card-img','.item-imagen');
+            miNodoImagen.src = `${info.imagen}`
             // Precio
             const miNodoPrecio = document.createElement('p');
-            miNodoPrecio.classList.add('card-text');
+            miNodoPrecio.classList.add('card-text','precio-texto','text-center');
             miNodoPrecio.textContent = `${info.precio}$`;
             //Stock
             const miNodoStock = document.createElement('p');
-            miNodoStock.classList.add('card-text',);
+            miNodoStock.classList.add('card-text','stock-texto');
             miNodoStock.textContent = `${info.stock} unidades`;
             // Boton 
             const miNodoBoton = document.createElement('button');
-            miNodoBoton.classList.add('btn', 'btn-primary','bg-dark');
+            miNodoBoton.classList.add('btn', 'btn-primary','bg-dark','text-center');
             miNodoBoton.textContent = 'Añadir al carrito';
             miNodoBoton.setAttribute('marcador', info.id);
             miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
             // Insertamos
             miNodoCardBody.appendChild(miNodoTitle);
+            miNodoCardBody.appendChild(miNodoImagen)
             miNodoCardBody.appendChild(miNodoPrecio);
             miNodoCardBody.appendChild(miNodoStock);
             miNodoCardBody.appendChild(miNodoBoton);

@@ -3457,21 +3457,21 @@ textarea.form-control-lg {
   padding: 1rem;
   border-radius: calc(0.25rem - 1px); }
 
-.card-img,
-.card-img-top,
-.card-img-bottom {
-  width: 100%; }
-
-.card-img,
-.card-img-top {
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px); }
-
-.card-img,
-.card-img-bottom {
-  border-bottom-right-radius: calc(0.25rem - 1px);
-  border-bottom-left-radius: calc(0.25rem - 1px); }
-
+  .card-img,
+  .card-img-top,
+  .card-img-bottom {
+    width: 100%; }
+  
+  .card-img,
+  .card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px); }
+  
+  .card-img,
+  .card-img-bottom {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px); }
+  
 .card-group > .card {
   margin-bottom: 0.75rem; }
 

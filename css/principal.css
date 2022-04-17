@@ -191,19 +191,18 @@ main {
           opacity: 1;
           cursor: pointer; }
 
-main {
-  grid-area: main; }
-  main .tituloMenu {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin: 2em; }
-    main .tituloMenu h2 {
-      font-size: 2.5em;
-      font-weight: 300; }
-  main .contenedor-productos {
-    display: flex;
-    justify-content: center;
-    flex-direction: column; }
-    main .contenedor-productos button {
-      margin: 1em 20em 1em 20em; }
+#items .card-body .titulo-producto {
+  font-size: 1.5em; }
+
+#items .card-body .item-imagen {
+  height: 200px;
+  width: 100px;
+  border-radius: 100px; }
+
+#items .card-body .precio-texto {
+  margin-top: 1em;
+  font-size: 1.2em; }
+
+#items .card-body .stock-texto {
+  margin-top: 1em;
+  text-align: center; }
